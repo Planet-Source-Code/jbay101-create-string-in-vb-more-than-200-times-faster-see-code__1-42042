@@ -1,0 +1,39 @@
+<meta http-equiv="Content-Language" content="en-us">
+<p><font face="Verdana" size="2" color="#0000FF">FastString Benchmark</font></p>
+<p><font face="Verdana" size="2">Visual Basic stores it's strings in a type refered to in C++ as a BSTR.
+This is an ActiveX-type format which is defined in the OLE Automation library.
+In Visual Basic, when you dynamicly create a string, VB automaticly fills it with data.
+However, when you deal with large strings, this can take a lot of time, and most of the time
+you don't want this. So, included in this project is a function which creates the string and doesn't fill it
+with data. This is a lot faster, as this benchmark shows.<br>
+&nbsp;</font></p>
+<p><font face="Verdana" size="2">The benchmark results are below:</font></p>
+<p><font face="Verdana" size="2">Using test buffer of 30,000 KB.</font></p>
+<table border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber1">
+  <tr>
+    <td width="33%"><b><font face="Verdana" size="2">Function</font></b></td>
+    <td width="33%"><b><font face="Verdana" size="2">Time (ms)</font></b></td>
+    <td width="34%"><b><font face="Verdana" size="2">Description</font></b></td>
+  </tr>
+  <tr>
+    <td width="33%"><font face="Verdana" size="2">AllocString_Space</font></td>
+    <td width="33%"><font face="Verdana" size="2">333.74</font></td>
+    <td width="34%"><font face="Verdana" size="2">Allocate storage using the Visual Basic 'Space' function.</font></td>
+  </tr>
+  <tr>
+    <td width="33%"><font face="Verdana" size="2">AllocString_StringASC</font></td>
+    <td width="33%"><font face="Verdana" size="2">395.58</font></td>
+    <td width="34%"><font face="Verdana" size="2">Allocate storage using the Visual Basic 'String' function and passing it a character code.</font></td>
+  </tr>
+  <tr>
+    <td width="33%"><font face="Verdana" size="2">AllocString_StringCHR</font></td>
+    <td width="33%"><font face="Verdana" size="2">479.57</font></td>
+    <td width="34%"><font face="Verdana" size="2">Allocate storage using the Visual Basic 'String' function and passing it a character.</font></td>
+  </tr>
+  <tr>
+    <td width="33%" bgcolor="#FFFF00"><font face="Verdana" size="2">AllocString_ADVANCED</font></td>
+    <td width="33%" bgcolor="#FFFF00"><font face="Verdana" size="2">11.96</font></td>
+    <td width="34%" bgcolor="#FFFF00"><font face="Verdana" size="2">
+    Using the API to allocate the storage.</font></td>
+  </tr>
+</table>
